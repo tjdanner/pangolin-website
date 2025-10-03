@@ -32,7 +32,7 @@ export default function Home() {
             title: "Network Security",
             description:
               "Comprehensive network monitoring, firewall configuration, and intrusion detection systems. We secure your infrastructure from external threats and unauthorized access.",
-            href: "#",
+            href: "/service-pages/network-security",
           },
           {
             icon: <MdBugReport />,
