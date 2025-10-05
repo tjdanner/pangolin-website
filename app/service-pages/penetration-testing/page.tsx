@@ -70,16 +70,13 @@ export default function PenetrationTesting() {
           },
         ],
       }}
-      endCTA={{
-        title: "Ready to Test Your Security?",
-        paragraph:
-          "Get a comprehensive security assessment from our certified penetration testing experts.",
-        buttonText: "Schedule Assessment",
-        buttonHref: "/contact",
-        backgroundImage: "/security-background.jpg",
+      showFormSection={true}
+      formSection={{
+        title: "Request Penetration Testing",
+        subtitle:
+          "Ready to test your security? Get a comprehensive assessment from our certified experts.",
+        backgroundColor: "bg-gray-50",
       }}
-      showContactForm={true}
-      contactFormTitle="Request Penetration Testing"
     />
   );
 }

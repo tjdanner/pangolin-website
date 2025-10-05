@@ -67,8 +67,13 @@ export default function NetworkSecurity() {
           },
         ],
       }}
-      showContactForm={true}
-      contactFormTitle="Get Started Today"
+      showFormSection={true}
+      formSection={{
+        title: "Get Started Today",
+        subtitle:
+          "Ready to secure your network? Contact us for a comprehensive security assessment.",
+        backgroundColor: "bg-white",
+      }}
     />
   );
 }

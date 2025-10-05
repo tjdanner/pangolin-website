@@ -3,14 +3,12 @@ import Banner from "./Banner";
 import TextSection from "./TextSection";
 import CardSection from "./CardSection";
 import ProcessSection from "./ProcessSection";
-import ContactForm from "./ContactForm";
+import FormSection from "./FormSection";
 
 interface ServicePageTemplateProps {
-  // Banner props
   title: string;
   subtitle?: string;
 
-  // Hero section props
   heroSection?: {
     title: string;
     paragraphs: string[];
@@ -19,7 +17,6 @@ interface ServicePageTemplateProps {
     imagePosition?: "left" | "right";
   };
 
-  // Cards section props
   cardsSection?: {
     title: string;
     cards: Array<{
@@ -30,7 +27,6 @@ interface ServicePageTemplateProps {
     }>;
   };
 
-  // Additional text sections
   additionalSections?: Array<{
     title: string;
     paragraphs: string[];
@@ -39,7 +35,6 @@ interface ServicePageTemplateProps {
     imagePosition?: "left" | "right";
   }>;
 
-  // Process section props
   processSection?: {
     title: string;
     paragraphs: string[];
@@ -52,18 +47,13 @@ interface ServicePageTemplateProps {
     imageAlt: string;
   };
 
-  // End CTA props
-  endCTA?: {
-    title: string;
-    paragraph: string;
-    buttonText: string;
-    buttonHref?: string;
-    backgroundImage: string;
+  formSection?: {
+    title?: string;
+    subtitle?: string;
+    backgroundColor?: string;
   };
 
-  // Contact form customization
-  showContactForm?: boolean;
-  contactFormTitle?: string;
+  showFormSection?: boolean;
 }
 
 export default function ServicePageTemplate({
@@ -73,16 +63,13 @@ export default function ServicePageTemplate({
   cardsSection,
   additionalSections = [],
   processSection,
-  endCTA,
-  showContactForm = true,
-  contactFormTitle = "Get Started Today",
+  formSection,
+  showFormSection = true,
 }: ServicePageTemplateProps) {
   return (
     <main className="min-h-screen bg-background">
-      {/* Banner */}
       <Banner title={title} subtitle={subtitle} backgroundColor="bg-accent" />
 
-      {/* Hero Section */}
       {heroSection && (
         <TextSection
           title={heroSection.title}
@@ -93,12 +80,10 @@ export default function ServicePageTemplate({
         />
       )}
 
-      {/* Cards Section */}
       {cardsSection && (
         <CardSection title={cardsSection.title} cards={cardsSection.cards} />
       )}
 
-      {/* Additional Text Sections */}
       {additionalSections.map((section, index) => (
         <TextSection
           key={index}
@@ -110,7 +95,6 @@ export default function ServicePageTemplate({
         />
       ))}
 
-      {/* Process Section */}
       {processSection && (
         <ProcessSection
           title={processSection.title}
@@ -121,27 +105,12 @@ export default function ServicePageTemplate({
         />
       )}
 
-      {/* End CTA */}
-      {endCTA && (
-        <EndCTASection
-          title={endCTA.title}
-          paragraph={endCTA.paragraph}
-          buttonText={endCTA.buttonText}
-          buttonHref={endCTA.buttonHref}
-          backgroundImage={endCTA.backgroundImage}
+      {showFormSection && (
+        <FormSection
+          title={formSection?.title}
+          subtitle={formSection?.subtitle}
+          backgroundColor={formSection?.backgroundColor}
         />
-      )}
-
-      {/* Contact Form */}
-      {showContactForm && (
-        <section className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-black">
-              {contactFormTitle}
-            </h2>
-            <ContactForm />
-          </div>
-        </section>
       )}
     </main>
   );
