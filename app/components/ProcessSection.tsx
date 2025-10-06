@@ -1,12 +1,8 @@
-import Image from "next/image";
-
 export default function ProcessSection({
   title,
   paragraphs,
   steps,
   backgroundColor = "bg-black",
-  imageSrc,
-  imageAlt,
 }: {
   title: string;
   paragraphs: string[];
@@ -16,28 +12,17 @@ export default function ProcessSection({
     description: string;
   }>;
   backgroundColor?: string;
-  imageSrc: string;
-  imageAlt: string;
 }) {
   return (
-    <section
-      className={`process-section p-[5%] flex justify-center items-center`}
-    >
-      <div className="process-content flex flex-col lg:items-center lg:flex-row gap-6 lg:gap-16 lg:max-w-screen-xl">
-        <div className="process-context flex flex-col text-center lg:text-left items-center lg:items-start gap-2 lg:w-[350px]">
+    <section className={`p-[5%] flex justify-center items-center`}>
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-16 lg:max-w-screen-xl">
+        <div className="flex flex-col gap-2">
           <h1 className="text-2xl lg:text-4xl font-semibold">{title}</h1>
           {paragraphs.map((paragraph, index) => (
             <p key={index} className="text-base">
               {paragraph}
             </p>
           ))}
-          <Image
-            className="process-img mt-2 lg:mt-4 lg:w-[300px]"
-            src={imageSrc}
-            alt={imageAlt}
-            width={200}
-            height={300}
-          />
         </div>
 
         <div className="flex flex-col gap-5 lg:gap-6">
