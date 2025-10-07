@@ -14,7 +14,7 @@ export default function ProcessSection({
   backgroundColor?: string;
 }) {
   return (
-    <section className={`p-[5%] flex justify-center items-center`}>
+    <section className="p-[5%] flex justify-center items-center">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-16 lg:max-w-screen-xl">
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl lg:text-4xl font-semibold">{title}</h1>

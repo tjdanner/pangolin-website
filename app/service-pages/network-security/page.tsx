@@ -2,7 +2,7 @@ import Banner from "../../components/Banner";
 import TextSection from "../../components/TextSection";
 import CardSection from "../../components/CardSection";
 import ProcessSection from "../../components/ProcessSection";
-import EndCTA from "../../components/EndCTASection";
+import FormSection from "@/app/components/FormSection";
 import { MdSecurity, MdMonitorHeart, MdBugReport } from "react-icons/md";
 
 export default function NetworkSecurity() {
@@ -11,6 +11,7 @@ export default function NetworkSecurity() {
       <Banner
         title="Network Security"
         subtitle="Protecting your network from evolving cyber threats 24/7"
+        backgroundColor="bg-accent"
       />
 
       {/* Add your page content here using your components */}
@@ -74,6 +75,11 @@ export default function NetworkSecurity() {
               "Continuous protection with real-time monitoring and threat response.",
           },
         ]}
+      />
+
+      <FormSection
+        title="Ready to UNLEASH your netork?"
+        text="Fill out the form to reach out and have us unleash your network."
       />
     </div>
   );
